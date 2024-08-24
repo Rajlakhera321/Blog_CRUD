@@ -4,6 +4,8 @@ const {verify} = require("../middleware")
 
 router.use("/user", require("./user"))
 
-router.use("/blog",verify.verifyToken, require("./blog"))
+router.use("/post", require("./post"))
+
+router.use("/comment",verify.verifyToken, require("./comment"))
 
 module.exports = router

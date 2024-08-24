@@ -1,7 +1,7 @@
 const {Schema, model} = require("mongoose");
 
 const userModel = new Schema({
-    name: {
+    username: {
         type: Schema.Types.String
     },
     email: {
@@ -9,6 +9,11 @@ const userModel = new Schema({
     },
     password: {
         type: Schema.Types.String
+    },
+    role: {
+        type: Schema.Types.String,
+        enum: ['superAdmin','admin','user'],
+        default: 'user'
     }
 },{timestamps: true});
 
